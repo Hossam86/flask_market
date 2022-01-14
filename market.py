@@ -7,6 +7,6 @@ def helle_world():
     return render_template('home.html')
 
 
-@app.route('/about/<username>')
-def about_pages(username):
-    return f'<h1>This is about page of {username}</h1>'
+@app.route('/market')
+def about_pages():
+    return render_template('market.html')
