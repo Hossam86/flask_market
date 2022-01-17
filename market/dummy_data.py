@@ -1,8 +1,14 @@
-from market import db
-from market import Item
+from market.models import db
+from market.models import Item
+from market.models import User
+db.drop_all()
 db.create_all()
+
 item1= Item(name= 'phone', barcode='123456789012', price=500, describtion='personal phone')
 item2= Item(name= 'laptop', barcode='987654321011', price=1500, describtion='personal computer')
+
+user1= User(user_name='hossam', email_address='hossam@outlook.com',password_hash='12345')
+
 db.session.add(item1)
 db.session.commit()
 db.session.add(item2)
